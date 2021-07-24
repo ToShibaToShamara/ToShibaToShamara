@@ -1,3 +1,1 @@
-I cant install fucking linux, 
-so I think you should probably 
-not use my code
+I don't think you should be using my code, even I don't know what am i doing.
