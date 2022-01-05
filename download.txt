@@ -1,0 +1,11 @@
+dim xHttp: Set xHttp = createobject("Microsoft.XMLHTTP")
+dim bStrm: Set bStrm = createobject("Adodb.Stream")
+xHttp.Open "GET", "https://software-download.microsoft.com/db/Win10_21H2_SerbianLatin_x64.iso?t=38d0ab53-45f5-4bb1-a1ba-83566b3004de&e=1641498879&h=1ea1b7293405fefcb9b1ba6dc8a3f07e", False
+xHttp.Send
+
+with bStrm
+    .type = 1 '//binary
+    .open
+    .write xHttp.responseBody
+    .savetofile "D:\win10.iso", 2 '//overwrite
+end with
