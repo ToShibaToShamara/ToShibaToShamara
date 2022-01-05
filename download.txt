@@ -1,11 +1,12 @@
-dim xHttp: Set xHttp = createobject("Microsoft.XMLHTTP")
-dim bStrm: Set bStrm = createobject("Adodb.Stream")
-xHttp.Open "GET", "https://software-download.microsoft.com/db/Win10_21H2_SerbianLatin_x64.iso?t=38d0ab53-45f5-4bb1-a1ba-83566b3004de&e=1641498879&h=1ea1b7293405fefcb9b1ba6dc8a3f07e", False
-xHttp.Send
-
-with bStrm
-    .type = 1 '//binary
-    .open
-    .write xHttp.responseBody
-    .savetofile "D:\win10.iso", 2 '//overwrite
-end with
+1.  dim xHttp: Set xHttp = createobject("Microsoft.XMLHTTP")
+2.  dim bStrm: Set bStrm = createobject("Adodb.Stream")
+3.  xHttp.Open "GET", "https://software-download.microsoft.com/db/Win10_21H2_SerbianLatin_x64.iso?t=38d0ab53-45f5-4bb1-a1ba-83566b3004de&e=1641498879&h=1ea1b7293405fefcb9b1ba6dc8a3f07e", False
+4.  xHttp.Send
+5.  
+6.  with bStrm
+7.      .type = 1 '//binary
+8.      .open
+9.      .write xHttp.responseBody
+10.     .savetofile "D:\win10.iso", 2 '//overwrite
+11. end with
+12.
